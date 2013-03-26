@@ -1,0 +1,27 @@
+@import "compass"
+
+.angular-ratings
+	@include clearfix
+	list-style: none
+	padding: 0
+	margin: 0
+	
+	li
+		float: left
+		width: 20px
+		height: 20px
+		border: 1px solid silver
+		margin: 1px
+		text-indent: -500000em
+		background: #ccc url(angular-star.png) no-repeat
+		background-size: 100%
+		
+		&.over
+			border-color: silver
+			background-color: #fff
+			background-position: 0 -20px
+			cursor: pointer
+		&.active
+			border-color: red
+			background-color: yellow
+			background-position: 0 -20px

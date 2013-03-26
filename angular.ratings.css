@@ -1,0 +1,4 @@
+.angular-ratings { overflow: hidden; *zoom: 1; list-style: none; padding: 0; margin: 0; }
+.angular-ratings li { float: left; width: 20px; height: 20px; border: 1px solid silver; margin: 1px; text-indent: -500000em; background: #cccccc url(angular-star.png) no-repeat; background-size: 100%; }
+.angular-ratings li.over { border-color: silver; background-color: white; background-position: 0 -20px; cursor: pointer; }
+.angular-ratings li.active { border-color: red; background-color: yellow; background-position: 0 -20px; }

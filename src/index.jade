@@ -1,0 +1,83 @@
+!!!
+html(lang="en", ng-app="DemoApp")
+	head
+		link(href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css",rel="stylesheet")
+		link(rel="stylesheet", href="angular.ratings.css")
+
+	body.container(ng-controller="DemoCtrl")
+		|<a href="https://github.com/thomporter/angular-ratings"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+		h1 Angular Ratings 
+			small Cool Angular Rating Icons Included!
+		p A diretive to help out with rating systems on your Angular powered website.
+		p In the first 2 demos, we're binding directly to a property on the scope of our controller, probably not 
+			| ever going to happen in the real world, but it makes for a super simple exmpale.
+
+		h2 Demo 1 
+			small Interactive
+		p A ratings widget that is editable by the user.
+		.row-fluid
+			.span3
+				angular-ratings(notify-url="notify.json", notify-id="id", ng-model="user_rating")
+			.span9
+				pre
+					|<angular-ratings ng-model="user_rating" notify-url="notify.json" notify-id="id">
+		hr
+		h2 Demo 2 
+			small Display
+		p Based on a static value not editable by the user, good for showing the average rating of something.
+			| This is accomplished by simply leaving out the notify-url.
+		.row-fluid
+			.span3
+				angular-ratings(ng-model="avg_rating")
+			.span9
+				pre
+					|<angular-ratings ng-model="user_rating">
+		hr
+		
+		h2 Demo 3 
+			small Usage in a list
+		p In this demo we'll be a little more realistic.  Here our controller has a list of items, each with an id, 
+			| name and rating.  It also has an object called "user_ratings" that represents the active user's ratings.
+			| It uses the item id's as keys, with the user's rating as values.  This allows us to access the ratings
+			| for each item like so: user_ratings[item.id]
+		.row-fluid
+			.span3
+				.item(ng-repeat="item in items")
+					h5 {{item.name}}
+					.row-fluid
+						.span6
+							strong Your Rating
+							angular-ratings(notify-url="notify.json", notify-id="id", ng-model="user_ratings[item.id]")
+						.span6
+							strong Average Rating
+							angular-ratings(ng-model="item.avg_rating")
+			.span9
+				pre
+					|<div ng-repeat="item in items" class="item">
+					|   <h5>{{item.name}}</h5>
+					|   <div class="row-fluid">
+					|      <div class="span6">
+					|         <strong>Your Rating</strong>
+					|         <angular-ratings notify-url="notify.json" notify-id="id" ng-model="user_ratings[item.id]"></angular-ratings>
+					|      </div>
+					|      <div class="span6">
+					|         <strong>Average Rating</strong>
+					|         <angular-ratings ng-model="item.avg_rating"></angular-ratings>
+					|      </div>
+					|   </div>
+					|</div>
+					
+		script(src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js")
+		script(src="angular.ratings.js")
+		script(src="demo.js")
+
+		script(type="text/javascript")
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-37350838-2']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
