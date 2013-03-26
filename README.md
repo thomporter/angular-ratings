@@ -31,3 +31,5 @@ a post request to the server.  It will look like this:
 ## Demo
 
 Visit the demos at [angular-ratings.thomporter.com](http://angular-ratings.thomporter.com)
+
+This directive is also in-use at [The Angular List](http://angularlist.com)
