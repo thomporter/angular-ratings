@@ -17,7 +17,7 @@ app.directive "angularRatings", ->
 			'</ol></div>'
 		
 		# controller
-		controller: ($scope, $attrs, $http) ->
+		controller: ['$scope', '$attrs', '$http', ($scope, $attrs, $http) ->
 			$scope.over = 0
 			
 			# accepts a piece of the time and where to put it... 
@@ -36,8 +36,7 @@ app.directive "angularRatings", ->
 			$scope.setOver = (n) ->
 				$scope.over = n
 				$scope.$apply()
-				
-
+		]
 		
 		
 		# currently no compilers needed, just the linking function...
