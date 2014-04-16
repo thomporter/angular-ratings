@@ -60,4 +60,4 @@
 
 }).call(this);
 
-//# sourceMappingURL=angular.ratings.map
+//# sourceMappingURL=angular.ratings.js.map
