@@ -1,3 +1,7 @@
+# REPO ARCHIVED
+
+No one should be using this now, it's far too old.
+
 # Angular Ratings
 
 A diretive to help out with rating systems on your Angular powered website.  This directive automatically notifies
